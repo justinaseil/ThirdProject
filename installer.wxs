@@ -1,0 +1,47 @@
+﻿<?xml version = "1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*" Name="Studentu Programa" Version="1.0.0.0" Manufacturer="Justina Seiliunaite" Language="1033" UpgradeCode="04bbb8b3-6b7a-43ce-b323-0f448c1c2967" Codepage="65001">
+        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+        <MajorUpgrade DowngradeErrorMessage="You already have the latest version of Studentu Programa" />
+        <MediaTemplate />
+
+        <Feature Id="ProductFeature" Title="Studentu Programa" Level="1">
+            <ComponentGroupRef Id="ProductComponents" />
+        </Feature>
+
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder">
+                <Directory Id="VU" Name="VU">
+                    <Directory Id="INSTALLFOLDER" Name="Justina-Seiliunaite">
+                        <Component Id="MainExecutable" Guid="04bbb8b3-6b7a-43ce-b323-0f448c1c2967">
+                            <File Id="ExecutableFile" Source="C:\Users\nagli\OneDrive\Desktop\v3.0js\v3.0js\bin\Release\v3.0js.exe" KeyPath="yes" Checksum="yes"/>
+                            <Shortcut Id="startMenuShortcut"
+                                      Directory="JustinaSeiliunaiteProgramMenuFolder"
+                                      Name="Studentu Programa"
+                                      WorkingDirectory="INSTALLFOLDER"
+                                      Advertise="no"/>
+                            <Shortcut Id="desktopShortcut"
+                                      Directory="DesktopFolder"
+                                      Name="Studentu Programa"
+                                      WorkingDirectory="INSTALLFOLDER"
+                                      Advertise="no"/>
+                        </Component>
+                    </Directory>
+                </Directory>
+            </Directory>
+
+            <Directory Id="ProgramMenuFolder" Name="Programs">
+                <Directory Id="JustinaSeiliunaiteProgramMenuFolder" Name="VU" />
+            </Directory>
+            <Directory Id="DesktopFolder" Name="Desktop" />
+        </Directory>
+
+    </Product>
+
+    <Fragment>
+        <ComponentGroup Id="ProductComponents">
+            <ComponentRef Id="MainExecutable" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>
