@@ -20,12 +20,12 @@
                                       Directory="JustinaSeiliunaiteProgramMenuFolder"
                                       Name="Studentu Programa"
                                       WorkingDirectory="INSTALLFOLDER"
-                                      Advertise="no"/>
+                                      Advertise="yes"/>
                             <Shortcut Id="desktopShortcut"
                                       Directory="DesktopFolder"
                                       Name="Studentu Programa"
                                       WorkingDirectory="INSTALLFOLDER"
-                                      Advertise="no"/>
+                                      Advertise="yes"/>
                         </Component>
                     </Directory>
                 </Directory>
